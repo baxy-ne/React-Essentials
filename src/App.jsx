@@ -1,20 +1,29 @@
 import { useState } from "react";
-import { CORE_CONCEPTS } from "./data";
+import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
 
 function App() {
-  useState("Please click a Button");
-
-  let tabContent = "Please click a Button";
+  const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
-    tabContent = selectedButton;
-    console.log(tabContent);
+    setSelectedTopic(selectedButton);
   }
 
-  console.log("aoo components loaded");
+  let tabContent = <p>Please select a topic.</p>;
+
+  if (selectedTopic) {
+    tabContent = (
+      <div id="tab-content">
+        <h3>{EXAMPLES[selectedTopic].title}</h3>
+        <p>{EXAMPLES[selectedTopic].description}</p>
+        <pre>
+          <code>{EXAMPLES[selectedTopic].code}</code>
+        </pre>
+      </div>
+    );
+  }
 
   return (
     <div>
