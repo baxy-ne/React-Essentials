@@ -16,10 +16,10 @@ function App() {
   if (selectedTopic) {
     tabContent = (
       <div id="tab-content">
-        <h3>{EXAMPLES[selectedTopic].title}</h3>
-        <p>{EXAMPLES[selectedTopic].description}</p>
+        <h3>{selectedTopic.title}</h3>
+        <p>{selectedTopic.description}</p>
         <pre>
-          <code>{EXAMPLES[selectedTopic].code}</code>
+          <code>{selectedTopic.code}</code>
         </pre>
       </div>
     );
@@ -40,12 +40,11 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TabButton onSelect={() => handleSelect("components")}>
-              Components
-            </TabButton>
-            <TabButton onSelect={() => handleSelect("jsx")}>JSX</TabButton>
-            <TabButton onSelect={() => handleSelect("props")}>Props</TabButton>
-            <TabButton onSelect={() => handleSelect("state")}>State</TabButton>
+            {EXAMPLES.map((example, index) => (
+              <TabButton key={index} onSelect={() => handleSelect(example)}>
+                {example.title}
+              </TabButton>
+            ))}
           </menu>
           {tabContent}
         </section>
