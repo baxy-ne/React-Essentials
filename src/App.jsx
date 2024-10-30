@@ -3,26 +3,13 @@ import { CORE_CONCEPTS, EXAMPLES } from "./data";
 import CoreConcept from "./components/CoreConcept";
 import Header from "./components/Header/Header.jsx";
 import TabButton from "./components/TabButton.jsx";
+import TabContent from "./components/ad.jsx";
 
 function App() {
   const [selectedTopic, setSelectedTopic] = useState();
 
   function handleSelect(selectedButton) {
     setSelectedTopic(selectedButton);
-  }
-
-  let tabContent = <p>Please select a topic.</p>;
-
-  if (selectedTopic) {
-    tabContent = (
-      <div id="tab-content">
-        <h3>{selectedTopic.title}</h3>
-        <p>{selectedTopic.description}</p>
-        <pre>
-          <code>{selectedTopic.code}</code>
-        </pre>
-      </div>
-    );
   }
 
   return (
@@ -46,7 +33,16 @@ function App() {
               </TabButton>
             ))}
           </menu>
-          {tabContent}
+          {selectedTopic ? (
+            <TabContent
+              title={selectedTopic.title}
+              description={selectedTopic.description}
+              code={selectedTopic.code}
+              testProp="DASStestPropDD"
+            />
+          ) : (
+            <p>Please select a topic.</p>
+          )}
         </section>
       </main>
     </div>

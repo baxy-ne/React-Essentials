@@ -120,3 +120,15 @@ main h2 {
 #tab-content code {
   font-size: 1rem;
 }
+
+.BTNLeon {
+  border-radius: 10px;
+  background-color: pink;
+  padding: 4px;
+  border: none;
+  margin: 2px;
+}
+
+.BTNLeon:hover {
+  cursor: pointer;
+}
