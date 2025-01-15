@@ -7,10 +7,8 @@
 html {
   font-family: "Quicksand", sans-serif;
   line-height: 1.5;
-
   color: #ebe7ef;
-  background: radial-gradient(#280a48, #20043d);
-
+  background: radial-gradient(#251636, #20043d);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -54,10 +52,19 @@ main h2 {
   text-align: center;
 }
 
+#core-concepts li:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+  border-radius: 6px;
+  background-color: #1b082f;
+  color: #ebe7ef;
+}
+
 #core-concepts li img {
   height: 4rem;
   width: 6rem;
   object-fit: cover;
+  border-radius: 6px;
 }
 
 #core-concepts li h3 {
@@ -66,6 +73,12 @@ main h2 {
 
 #core-concepts li p {
   font-size: 0.9rem;
+  color: #a18aba;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  font-family: "Roboto Condensed", sans-serif;
+  margin: 0 0 1.5rem 0;
 }
 
 #examples {
@@ -104,6 +117,11 @@ main h2 {
 #examples menu button.active {
   background-color: #7925d3;
   color: #ebe7ef;
+}
+
+#examples menu button.active:hover {
+  background-color: #852ae7;
+  color: #ffffff;
 }
 
 #tab-content {

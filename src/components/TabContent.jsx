@@ -1,6 +1,6 @@
 const TabContent = (...props) => {
-  const {title, code, description} = props[0]
-  
+  const { title, code, description } = props[0];
+
   return (
     <div id="tab-content">
       <h3>{title}</h3>
